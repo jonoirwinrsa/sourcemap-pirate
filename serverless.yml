@@ -1,0 +1,24 @@
+service: sourcemap-pirate
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+
+functions:
+  generate:
+    handler: handler.generate
+    events:
+      - http:
+          path: generate
+          method: get
+          contentHandling: CONVERT_TO_BINARY
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
