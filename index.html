@@ -5,6 +5,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Sourcemap Pirate - arrrr</title>
     <style>
+      * {
+        color: white;
+        font-family: sans-serif;
+      }
+
       body {
         min-height: 100vh;
         min-width: 100vw;
@@ -30,11 +35,6 @@
 
       label {
         display: none;
-      }
-
-      h1 {
-        color: white;
-        font-family: sans-serif;
       }
 
       button {
@@ -64,14 +64,26 @@
       button:hover {
         box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 20px 0px;
       }
+
+      img {
+        max-width: 300px;
+      }
+
+      #icon-notice {
+        padding-top: 40px;
+      }
     </style>
   </head>
   <body>
-    <img src='parrot.png' alt='parrot'>
+    <h1>Sourcemap Pirate</h1>
+    <img src='pirate.svg' alt='parrot'>
     <H1>I CAN HAZ SOURCE</H1>
     <label for='sourcemap-input'>Sourcemap url</label>
     <input id='sourcemap-input' type='text' placeholder='Sourcemap url' />
     <button type='button' onclick='onSubmit()'>Download</button>
+    <div id='icon-notice'>Pirate icon made by <a href='https://www.flaticon.com/authors/freepik'
+                                                 title='Freepik'>Freepik</a>
+      from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div>
   </body>
   <script>
     function onSubmit () {
