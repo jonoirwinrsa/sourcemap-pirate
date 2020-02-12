@@ -31,6 +31,7 @@
         border-radius: 5px;
         -webkit-appearance: none;
         border: none;
+        color: rgb(231, 76, 60);
       }
 
       label {
@@ -86,6 +87,9 @@
       from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a></div>
   </body>
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const url = urlParams.get('url')
+    document.getElementById('sourcemap-input').value = url
     function onSubmit () {
       window.location = 'https://pjr18m9q94.execute-api.eu-west-1.amazonaws.com/dev/generate?url=' + document.getElementById('sourcemap-input').value
     }
