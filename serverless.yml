@@ -21,4 +21,4 @@ functions:
 custom:
   apigwBinary:
     types:
-      - '*/*'
+      - "*/*"
