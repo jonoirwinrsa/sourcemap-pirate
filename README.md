@@ -6,7 +6,7 @@
 > Enter a URL of a sourcemap .map file and get back the source in a zip file
 
 
-![Sourcemap Pirate](pirate.svg "Sourcemap Pirate" )
+![Sourcemap Pirate](docs/android-chrome-192x192.png "Sourcemap Pirate" )
 
 
 ### 🏠 [Homepage](https://jonoirwinrsa.github.io/sourcemap-pirate/)

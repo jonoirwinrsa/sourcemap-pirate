@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourcemap Pirate - arrrr</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      * {
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      body {
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(39, 174, 96);
+      }
+
+      input {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 20px;
+        padding: 20px;
+        width: 40%;
+        min-width: 260px;
+        border-radius: 5px;
+        -webkit-appearance: none;
+        border: none;
+        color: rgb(231, 76, 60);
+      }
+
+      label {
+        display: none;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 20px 0px;
+        cursor: pointer;
+        font-size: 1.07rem;
+        font-weight: 500;
+        color: rgb(236, 240, 241);
+        width: 40%;
+        min-width: 260px;
+        background-color: rgb(231, 76, 60);
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 5px;
+        transition: all 0.3s ease 0s;
+        border-width: 0px 0px thick;
+        border-image: initial;
+        border-bottom: thick solid rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      button:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 20px 0px;
+      }
+
+      img {
+        max-width: 300px;
+        margin-bottom: 1em;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      #icon-notice {
+        padding-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sourcemap Pirate</h1>
+    <img src="pirate.svg" alt="parrot" />
+    <label for="sourcemap-input">Sourcemap url</label>
+    <input id="sourcemap-input" type="text" placeholder="Sourcemap url" />
+    <button type="button" onclick="onSubmit()">Download</button>
+    <h2>How to use?</h2>
+    <h3>
+      Simply enter the url of the .map file you want the source for then hit
+      download
+    </h3>
+    <h2>How it works?</h2>
+    <h3>
+      Checkout the
+      <a target="_blank" href="https://github.com/jonoirwinrsa/sourcemap-pirate"
+        >source on GitHub</a
+      >
+    </h3>
+    <div id="icon-notice">
+      Pirate icon made by
+      <a
+        target="_blank"
+        href="https://www.flaticon.com/authors/freepik"
+        title="Freepik"
+        >Freepik</a
+      >
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+  </body>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const url = urlParams.get("url");
+    document.getElementById("sourcemap-input").value = url;
+
+    function onSubmit() {
+      window.location =
+        "https://pjr18m9q94.execute-api.eu-west-1.amazonaws.com/dev/generate?url=" +
+        document.getElementById("sourcemap-input").value;
+    }
+  </script>
+</html>
