@@ -8,6 +8,7 @@
 
 ![Sourcemap Pirate](docs/android-chrome-192x192.png "Sourcemap Pirate" )
 
+# NB: The site is no longer deployed but you deploy it yourself or run the same commands locally
 
 ### 🏠 [Homepage](https://jonoirwinrsa.github.io/sourcemap-pirate/)
 
